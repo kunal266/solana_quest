@@ -6,7 +6,7 @@ const Home = props => {
 "Who is the better actor",];
     return (
         <Container style={{minHeight:"100vh"}}>
-                <Table Style={{margin:"5vh"}} stripped bordered hover>
+                <Table style={{margin:"5vh"}}>
                     <thead>
                         <tr>
                             <th>#</th>
