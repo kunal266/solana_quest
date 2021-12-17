@@ -18,6 +18,14 @@ const PollingStation = props => {
                                     <img style={{height:'35vh',width:"20vw"}} src={candidate1URl}></img>
                             </div>
                         </Row>
+                        <Row><div style={{
+                            display:'flex',
+                            justifyContent:'center',
+                            fontSize:'8vw',
+                            padding:'10px',
+                            backgroundColor:'#c4c4c4'
+                        }}>3</div></Row>
+                        <Row></Row>
                     </Container>
                 </Col>
 
