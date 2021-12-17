@@ -18,10 +18,14 @@ import NewPoll from './Components/NewPoll.js';
 const { networkId } = getConfig(process .env.NODE_ENV || 'development')
 
 export default function App() {
-  return (<Router>
+
+
+  return (
+    
+  <Router>
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+        <Navbar.Brand href="/">Voting Near</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto"></Nav>

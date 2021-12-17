@@ -5,7 +5,7 @@ const Home = props => {
     const promptList = ["Who would win in Smash Bros?",
 "Who is the better actor",];
     return (
-        <Container>
+        <Container style={{minHeight:"100vh"}}>
                 <Table Style={{margin:"5vh"}} stripped bordered hover>
                     <thead>
                         <tr>

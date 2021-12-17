@@ -18,6 +18,7 @@ const DEFAULT_MESSAGE = 'Hello'
 
 // Exported functions will be part of the public interface for your smart contract.
 // Feel free to extract behavior to non-exported functions!
+//the following method is view method
 export function getGreeting(accountId: string): string | null {
   // This uses raw `storage.get`, a low-level way to interact with on-chain
   // storage for simple contracts.
@@ -26,6 +27,7 @@ export function getGreeting(accountId: string): string | null {
   return storage.get<string>(accountId, DEFAULT_MESSAGE)
 }
 
+//the following method is state changing,it cost moeny and changes the state
 export function setGreeting(message: string): void {
   const accountId = Context.sender
   // Use logging.log to record logs permanently to the blockchain!
