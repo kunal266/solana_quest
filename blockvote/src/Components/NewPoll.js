@@ -6,6 +6,26 @@ const NewPoll = props => {
     const candidateName1URL = useRef();
     const candidateName2URL = useRef();
     const promptRef = useRef();
+    const sendToBlockChain = async()=>{
+        await window.contract.addUrl({
+            name:candidateName1.current.value,
+            url:candidateName1URL.current.value
+        })
+        await window.contract.addUrl({
+            name:candidateName2.current.value,
+            url:candidateName2URL.current.value
+        })
+        await window.contract.addCandidatePair({
+            prompt:promptRef.current.value,
+            name1:candidateName1.current.value,
+            name2:candidateName2.current.value
+        })
+        await window.contract.addToPromptArray({
+            prompt:promptRef.current.value,
+        })
+        console.log("everything worked fine");
+    }
+    
     return (
         <Container style={{ marginTop: "10px", minHeight: "100vh" }}>
             <Form>
@@ -15,6 +35,7 @@ const NewPoll = props => {
                         ref={candidateName1}
                         placeholder='Enter Candidate Name'>
                     </Form.Control>
+                    
                 </Form.Group>
                 <Form.Group className='mb-3'>
                     <Form.Label>Candidate 1 Image URL</Form.Label>
@@ -38,14 +59,14 @@ const NewPoll = props => {
                     </Form.Control>
                 </Form.Group>
                 <Form.Group className='mb-3'>
-                    <Form.Label>Promp</Form.Label>
+                    <Form.Label>Prompt</Form.Label>
                     <Form.Control
                         ref={promptRef}
                         placeholder='Add Prompt'>
                     </Form.Control>
                 </Form.Group>
             </Form>
-            <Button variant="primary">Submit</Button>
+            <Button onClick={sendToBlockChain} variant="primary">Submit</Button>
         </Container>
     );
 };

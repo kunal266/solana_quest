@@ -21,7 +21,7 @@ const Home = props => {
                                     <td>{index+1}</td>
                                     <td>{el}</td>
                                     <td>{" "}
-                                    <Button>Go to Polls</Button></td>
+                                    <Button href='/PollingStation'>Go to Polls</Button></td>
                                 </tr>);
 
                             })
